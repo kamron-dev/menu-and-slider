@@ -8,7 +8,6 @@ body {
 header {
     display: flex;
     flex-direction: row;
-    border: 2px solid red;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -20,4 +19,46 @@ header>i {
 
 header>h1 {
     font-size: 2.5rem;
+}
+
+ul>li {
+    list-style: none;
+    font-size: 5.5rem;
+    margin: 3rem;
+    font-weight: 200;
+}
+
+#overlay.visible {
+    transform: translateY(0);
+
+}
+
+#overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    z-index: 2;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: transform 300ms ease-in-out;
+    transform: translateY(-100%);
+}
+
+
+#x-mark {
+    position: absolute;
+    top: 38px;
+    left: 30px;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
 }
