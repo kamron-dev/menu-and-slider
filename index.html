@@ -24,8 +24,18 @@
         <h1>Nous</h1>
         <i class="fa-solid fa-magnifying-glass fa-2x"></i>
     </header>
-    <div id="main-div">
-        <div class="card"></div>
+    <div id="slideshow-div">
+        <div class="carousel" data-carousel>
+            <button class="carousel-btn-prev" data-carousel-btn="prev">&#10229;</button>
+            <button class="carousel-btn-next" data-carousel-btn="next">&#10230;</button>
+            <ul class="images-div" data-slides>
+                <li class="slide" data-active><img src="img/1.jpg" alt=""></li>
+                <li class="slide"><img src="img/2.jpg" alt=""></li>
+                <li class="slide"><img src="img/3.jpg" alt=""></li>
+            
+            </ul>
+        </div>
+        
     </div>
     <script src="index.js"></script>
 </body>
