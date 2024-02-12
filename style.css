@@ -3,6 +3,7 @@
 body {
     font-family: 'Bebas Neue', sans-serif;
     box-sizing: border-box;
+    margin: 0;
 }
 
 header {
@@ -12,6 +13,8 @@ header {
     flex-direction: row;
     justify-content: space-between;
     width: 100vw;
+    background-color: black;
+    color: white;
 }
 header>i {
     margin: 30px;
