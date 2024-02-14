@@ -24,19 +24,20 @@
         <h1>Nous</h1>
         <i class="fa-solid fa-magnifying-glass fa-2x"></i>
     </header>
-    <div id="slideshow-div">
-        <div class="carousel" data-carousel>
-            <button class="carousel-btn-prev" data-carousel-btn="prev">&#8678;</button>
-            <button class="carousel-btn-next" data-carousel-btn="next">&#8680;</button>
-            <ul class="images-div" data-slides>
-                <li class="slide" data-active><img src="img/1.jpg" alt=""></li>
-                <li class="slide"><img src="img/2.jpg" alt=""></li>
-                <li class="slide"><img src="img/3.jpg" alt=""></li>
-            
-            </ul>
+    <div class="slider-wrapper">
+        <div class="slider">
+            <div id="slide-1" class="slide" style="background-image: url(img/1.jpg);"></div>
+            <div id="slide-2" class="slide" style="background-image: url(img/2.jpg);"></div>
+            <div id="slide-3" class="slide" style="background-image: url(img/3.jpg);"></div>
+            <div class="dots">
+                <a href="#slide-1"></a>
+                <a href="#slide-2"></a>
+                <a href="#slide-3"></a>
+                
+            </div>
         </div>
-        
     </div>
+    
     <script src="index.js"></script>
 </body>
 </html>
