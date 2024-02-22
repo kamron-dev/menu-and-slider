@@ -139,3 +139,27 @@ a {
     opacity: 1;
 }
 
+
+.buttons {
+    position: absolute;
+    font-size: 4rem;
+    color: #fff;
+    bottom: 50%;
+    transform: translateY(50%);
+    background-color: black;
+    opacity: 0.60;
+    transition: opacity 250ms ease-in;
+    cursor: pointer;
+    
+}
+
+.buttons:hover {
+    opacity: 1;
+}
+
+#right-btn {
+    left: 99.5%;
+}
+#left-btn {
+    left: -5.2%;
+}

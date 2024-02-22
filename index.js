@@ -20,3 +20,32 @@
 })();
 
 
+const leftButton = document.getElementById("left-btn");
+const rightButton = document.getElementById("right-btn");
+const slides = document.querySelectorAll(".slide");
+const slidesArr = []
+
+slides.forEach(slide => {
+    slidesArr.push(slide.getAttribute("id"))
+})
+
+console.table(slidesArr)
+
+leftButton.addEventListener("click", () => {
+    window.location.hash = findPrevSlide()
+    
+    
+})
+
+function findPrevSlide() {
+    const currentSlide = window.location.hash.substr(1);
+    const currentSlideIndex = slidesArr.indexOf(currentSlide);
+    const newSlideIndex = (currentSlideIndex - 1 + slidesArr.length) % slidesArr.length;
+    const newSlide = "#" + slidesArr[newSlideIndex]
+
+    return newSlide;
+};
+
+function findNextSlide() {
+    
+}
