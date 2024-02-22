@@ -35,6 +35,10 @@ leftButton.addEventListener("click", () => {
     window.location.hash = findPrevSlide()
     
     
+});
+
+rightButton.addEventListener("click", () => {
+    window.location.hash = findNextSlide()
 })
 
 function findPrevSlide() {
@@ -47,5 +51,11 @@ function findPrevSlide() {
 };
 
 function findNextSlide() {
-    
+    const currentSlide = window.location.hash.substr(1);
+    const currentSlideIndex = slidesArr.indexOf(currentSlide);
+    const newSlideIndex = (currentSlideIndex + 1 + slidesArr.length) % slidesArr.length;
+    const newSlide = "#" + slidesArr[newSlideIndex];
+
+    return newSlide;
+
 }
