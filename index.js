@@ -32,7 +32,7 @@ slides.forEach(slide => {
 console.table(slidesArr)
 
 leftButton.addEventListener("click", () => {
-    window.location.hash = findNewSlide()
+    window.location.hash = findPrevSlide()
     
     
 });
@@ -58,17 +58,4 @@ function findNextSlide() {
 
     return newSlide;
 
-}
-
-function findNewSlide(operator) {
-    const currentSlide = window.location.hash.substr(1);
-    const currentSlideIndex = slidesArr.indexOf(currentSlide);
-    if (operator === "next") {
-        const newSlideIndex = (currentSlideIndex + 1 + slidesArr.length) % slidesArr.length;
-    } else {
-        const newSlideIndex = (currentSlideIndex - 1 + slidesArr.length) % slidesArr.length;
-    };
-    const newSlide = "#" + slidesArr[newSlideIndex];
-
-    return newSlide;
 }
