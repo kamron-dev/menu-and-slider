@@ -29,33 +29,31 @@ slides.forEach(slide => {
     slidesArr.push(slide.getAttribute("id"))
 })
 
-console.table(slidesArr)
 
 leftButton.addEventListener("click", () => {
-    window.location.hash = findPrevSlide()
-    
-    
+    window.location.hash = findNewSlide("prev")
 });
 
 rightButton.addEventListener("click", () => {
-    window.location.hash = findNextSlide()
+    window.location.hash = findNewSlide("next")
 })
 
-function findPrevSlide() {
+
+function findNewSlide(direction) {
     const currentSlide = window.location.hash.substr(1);
     const currentSlideIndex = slidesArr.indexOf(currentSlide);
-    const newSlideIndex = (currentSlideIndex - 1 + slidesArr.length) % slidesArr.length;
-    const newSlide = "#" + slidesArr[newSlideIndex]
+    let newSlideIndex;
 
-    return newSlide;
-};
+    if (direction === "next") {
+        newSlideIndex = (currentSlideIndex + 1 + slidesArr.length) % slidesArr.length;
+    } else if (direction === "prev") {
+        newSlideIndex = (currentSlideIndex - 1 + slidesArr.length) % slidesArr.length;
+    } else {
+        console.log("Invaid direction");
+        return null;
+    }
 
-function findNextSlide() {
-    const currentSlide = window.location.hash.substr(1);
-    const currentSlideIndex = slidesArr.indexOf(currentSlide);
-    const newSlideIndex = (currentSlideIndex + 1 + slidesArr.length) % slidesArr.length;
     const newSlide = "#" + slidesArr[newSlideIndex];
 
     return newSlide;
-
 }
