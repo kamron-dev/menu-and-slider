@@ -145,16 +145,15 @@ a {
 
 
 .buttons {
-    /* position: absolute; */
     font-size: 4rem;
-    height: 6rem;
+    height: 100%;
     color: #fff;
-    /* bottom: 50%; */
-    /* transform: translateY(50%); */
     background-color: black;
     opacity: 0.60;
     transition: opacity 250ms ease-in;
     cursor: pointer;
+    display: flex;
+    align-items: center;
     
 }
 
