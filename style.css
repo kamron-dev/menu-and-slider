@@ -78,13 +78,18 @@ a {
 
 
 .slider-wrapper {
+    --slide-width: clamp(320px, 75vw, 800px);
+    
     position: relative;
+    display: grid;
+    grid-template-columns: 45px var(--slide-width) 45px;
+    align-items: center;
 }
 
 .slider {
     --slide-width: clamp(320px, 75vw, 800px);
     --slide-height: clamp(240px, 75vh, 600px);
-
+    grid-column: 2;
     display: grid;
     grid-auto-flow: column;
     scroll-snap-type: x mandatory;
@@ -117,11 +122,10 @@ a {
     transform: translateX(-50%);
     gap: 15px;
     z-index: 1;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
+    
 }
 
 .dots a {
@@ -141,11 +145,12 @@ a {
 
 
 .buttons {
-    position: absolute;
+    /* position: absolute; */
     font-size: 4rem;
+    height: 6rem;
     color: #fff;
-    bottom: 50%;
-    transform: translateY(50%);
+    /* bottom: 50%; */
+    /* transform: translateY(50%); */
     background-color: black;
     opacity: 0.60;
     transition: opacity 250ms ease-in;
@@ -158,8 +163,12 @@ a {
 }
 
 #right-btn {
-    left: 99.5%;
+    /* left: 99.5%; */
+    grid-column: 3;
+    grid-row: 1;
 }
 #left-btn {
-    left: -5.2%;
+    /* left: -5.2%; */
+    grid-column: 1/2;
+    grid-row: 1;
 }
