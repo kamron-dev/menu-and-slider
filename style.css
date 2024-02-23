@@ -38,11 +38,11 @@ nav>ul>li {
     font-size: 5.5rem;
     margin: 3rem;
     font-weight: 200;
+    transform: rotate3d(0, 0, 0, 0deg) translateX(px) scale(.5);
+    transition: transform 400ms ease-in;
 }
-
-#overlay.visible {
-    transform: translateY(0);
-
+nav>ul>li.visibleToo {
+    transform: rotate3d(1, 1, 0, 360deg) translateX(50px) scale(1);
 }
 
 #overlay {
@@ -62,6 +62,10 @@ nav>ul>li {
     transform: translateY(-100%);
 }
 
+#overlay.visible {
+    transform: translateY(0);
+
+}
 
 #x-mark {
     position: absolute;

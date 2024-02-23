@@ -3,19 +3,19 @@
     const xButton = document.getElementById("x-mark");
     const menuBtn = document.getElementById("menu-bar");
     
-    xButton.addEventListener("click", () => {
-        const div = document.getElementById("overlay");
-        div.classList.toggle("visible");
-        
-        
-    });
+    xButton.addEventListener("click", toggleVisibility);
     
-    menuBtn.addEventListener("click", () => {
+    menuBtn.addEventListener("click", toggleVisibility);
+    
+    function toggleVisibility() {
         const div = document.getElementById("overlay");
+        const liEls = document.querySelectorAll(".li-el");
         div.classList.toggle("visible");
+        liEls.forEach(el => {
+            el.classList.toggle("visibleToo");
+        })
         
-    });
-
+    }
 
 })();
 
@@ -37,7 +37,7 @@ leftButton.addEventListener("click", () => {
 rightButton.addEventListener("click", () => {
     window.location.hash = findNewSlide("next")
 })
-
+    
 
 function findNewSlide(direction) {
     const currentSlide = window.location.hash.substr(1);
