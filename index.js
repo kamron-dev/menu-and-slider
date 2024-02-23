@@ -27,7 +27,7 @@ const slidesArr = []
 
 slides.forEach(slide => {
     slidesArr.push(slide.getAttribute("id"))
-})
+});
 
 
 leftButton.addEventListener("click", () => {
@@ -36,8 +36,15 @@ leftButton.addEventListener("click", () => {
 
 rightButton.addEventListener("click", () => {
     window.location.hash = findNewSlide("next")
-})
+});
     
+function timerForSlides() {
+    window.location.hash = findNewSlide("next");
+
+};
+
+setInterval(timerForSlides, 5000);
+
 
 function findNewSlide(direction) {
     const currentSlide = window.location.hash.substr(1);
